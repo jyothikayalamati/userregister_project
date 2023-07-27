@@ -1,0 +1,32 @@
+<!-- templates/set_security_question.html -->
+
+<form id="set-security-question-form">
+  <label for="username">Username:</label>
+  <input type="text" name="username" id="username">
+  <br>
+  <label for="password">Password:</label>
+  <input type="password" name="password" id="password">
+  <br>
+  <label for="security_question">Select Security Question:</label>
+  <select name="security_question" id="security_question" required>
+
+<option value="" disabled selected>Select a security question</option>
+    <option value="What was the name of your first pet?">What was the name of your first pet?</option>
+    <option value="What is your favorite sport?">What is your favorite sport?</option>
+    <option value="What is your favorite color">What is your favorite color?</option>
+    <option value="Your best friend name?">Your best friend name?</option>
+    <option value="Who is your favorite singer?">Who is your favorite singer?</option>
+    <option value="What is your favorite movie?">What is your favorite movie?</option>
+    <option value="The name of your elementary school?">The name of your elementary school?</option>
+    
+  </select>
+</div>
+    
+    
+  </select>
+  <br>
+  <label for="security_answer">Security Answer:</label>
+  <input type="text" name="security_answer" id="security_answer">
+  <br>
+  <button type="submit">Set Security Question</button>
+</form>

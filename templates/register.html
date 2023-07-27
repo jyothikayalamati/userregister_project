@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Register</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="security_question">security_question:</label>
+                <select class="form-control" id="security_question"  required>
+                    <option value="" enable selected>security_question</option>
+                    <option value="What was the name of your first pet?">What was the name of your first pet?</option>
+                    <option value="What is your favorite sport?">What is your favorite sport?</option>
+                    <option value="What is your favorite color">What is your favorite color?</option>
+                    <option value="Your best friend name?">Your best friend name?</option>
+                    <option value="Who is your favorite singer?">Who is your favorite singer?</option>
+                    <option value="What is your favorite movie?">What is your favorite movie?</option>
+                    <option value="The name of your elementary school?">The name of your elementary school?</option>
+                    
+                  </select>
+                    
+                    {% for question in security_question %}
+                    <option value="{{ question.id }}">{{ question.question_text }}</option>
+                        
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="security_answer">Security Answer:</label>
+                <input type="text" class="form-control" id="security_answer" name="security_answer" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>
+</body>
+</html>
